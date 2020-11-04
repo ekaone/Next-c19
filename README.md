@@ -6,7 +6,17 @@
 
 📍 [API - Indonesia from Dekontaminasi](https://dekontaminasi.com/)
 
+📍 [Data fetching SWR](https://swr.vercel.app/)
+
+📍 [Data fetching React-Query](https://react-query.tanstack.com/)
+
 📍 [Framework Next.js](https://nextjs.org/)
+
+📍 [Design system Chakra-UI](https://chakra-ui.com/)
+
+## How it work
+
+> 🚩 Hint: Please open with your desktop browser, it's not design for mobile responsive
 
 ## Author
 
