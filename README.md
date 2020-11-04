@@ -1,30 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# This is Demo App for Covid-19
 
-## Getting Started
+## Getting resources
 
-First, run the development server:
+📍 [API - Global from Mathdro](https://covid19.mathdro.id/api)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+📍 [API - Indonesia from Dekontaminasi](https://dekontaminasi.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📍 [Framework Next.js](https://nextjs.org/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Author
 
-## Learn More
+✔ Eka Prasetia 🤵
 
-To learn more about Next.js, take a look at the following resources:
+<a href="https://www.ekaprasetia.com/">
+  <img src="https://img.shields.io/badge/Writer-Blog-orange" alt="Blog" />
+</a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<a href="https://twitter.com/dannyeka">
+  <img src="https://img.shields.io/badge/Tweet-Twitter-blue" alt="Twitter" />
+</a>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<a href="mailto:ekaone3033@gmail.com">
+  <img src="https://img.shields.io/badge/Email-ekaone3033@gmail.com-yellow" alt="Email" />
+</a>
 
-## Deploy on Vercel
+✔ Collection my App
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👉🛠 Find example all my [Scratch App](https://github.com/ekaone)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+✔ Community
+
+I am author for two communities in Indonesia
+
+- GatsbyJS Indonesia [Gatsby-ID](https://gatsbyjs.id)
+- RedwoodJS Indonesia [Redwood-ID](https://redwoodjs.id)
+- NextJS Indonesia [Next.js-ID](https://github.com/NextJS-Indonesia)
