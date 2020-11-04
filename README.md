@@ -14,6 +14,8 @@
 
 📍 [Design system Chakra-UI](https://chakra-ui.com/)
 
+📍 [HTTP Cache-Control Extensions for Stale Content](https://tools.ietf.org/html/rfc5861)
+
 ## How it work
 
 > 🚩 Hint: Please open with your desktop browser, it's not design for mobile responsive
