@@ -16,6 +16,10 @@
 
 📍 [HTTP Cache-Control Extensions for Stale Content](https://tools.ietf.org/html/rfc5861)
 
+## Best approach
+
+A `data-driven` approach enables companies to examine and organise their data with the goal of better serving their customers and consumers.
+
 ## How it work
 
 > 🚩 Hint: Please open with your desktop browser, it's not design for mobile responsive

@@ -13,11 +13,12 @@ function Contents() {
           <Text
             fontSize="40px"
             color="gray.900"
-            textTransform="uppercase"
             fontWeight="600"
             fontFamily="font.trebuchet"
+            textAlign="center"
+            marginTop="25px"
           >
-            Contents
+            Num of cases in Indonesia
           </Text>
           <Grid
             templateColumns={{
@@ -29,6 +30,7 @@ function Contents() {
             maxWidth="86em"
             ml="auto"
             mr="auto"
+            mt="25px"
           >
             {status.map(s => (
               <CardContent heading={s.number} body={s.status} color={s.color} />
