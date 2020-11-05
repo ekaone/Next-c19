@@ -2,19 +2,13 @@
 
 ## Getting resources
 
-📍 [API - Global from Mathdro](https://covid19.mathdro.id/api)
-
-📍 [API - Indonesia from Dekontaminasi](https://dekontaminasi.com/)
-
-📍 [Data fetching SWR](https://swr.vercel.app/)
-
-📍 [Data fetching React-Query](https://react-query.tanstack.com/)
-
-📍 [Framework Next.js](https://nextjs.org/)
-
-📍 [Design system Chakra-UI](https://chakra-ui.com/)
-
-📍 [HTTP Cache-Control Extensions for Stale Content](https://tools.ietf.org/html/rfc5861)
+- 📍 [API - Global from Mathdro](https://covid19.mathdro.id/api)
+- 📍 [API - Indonesia from Dekontaminasi](https://dekontaminasi.com/)
+- 📍 [Data fetching SWR](https://swr.vercel.app/)
+- 📍 [Data fetching React-Query](https://react-query.tanstack.com/)
+- 📍 [Framework Next.js](https://nextjs.org/)
+- 📍 [Design system Chakra-UI](https://chakra-ui.com/)
+- 📍 [HTTP Cache-Control Extensions for Stale Content](https://tools.ietf.org/html/rfc5861)
 
 ## Best approach
 
