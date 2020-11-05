@@ -1,33 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Box, Text, Stack, Grid, useTheme } from "@chakra-ui/core";
-import useSWR from "swr";
+import { Flex, Box, Text, Stack, Grid, Select } from "@chakra-ui/core";
 
 // components
 import Layout from "./layout";
 import CardContent from "./card.content";
 import status from "../shared/status";
 import fetcher from "../utils/fetcher";
+import fetcherSwr from "../utils/fetcherSwr";
 import NewsContent from "./news.content";
 import getCountry from "../utils/getCountry";
+import countries from "../shared/countries";
 
 const END_POINT =
   "https://covid19.mathdro.id/api/countries/indonesia/confirmed";
 
-function Country() {
-  const { data, error } = useSWR(
-    `https://covid19.mathdro.id/api/countries/usa/`,
-    fetcher
-  );
-  if (error) return "failed to load";
-  if (!data) return "loading...";
-  // render data
-  return { data };
-}
-
 function Contents() {
   const [status, setStatus] = useState([]);
   const [timeUpdate, setTimeUpdate] = useState();
-  const [country, setCountry] = useState({});
+  const [country, setCountry] = useState();
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -42,15 +32,12 @@ function Contents() {
     };
   }, [fetcher]);
 
-  let c = Country();
-  useEffect(() => {
-    const abortController = new AbortController();
-    setCountry(c);
-
-    return () => {
-      abortController.abort();
-    };
-  }, [fetcher]);
+  const handlerChangeCountry = e => {
+    const END_POINT_COUNTRY = `https://covid19.mathdro.id/api/countries/${e.target.value}/`;
+    fetcher(END_POINT_COUNTRY).then(values => {
+      setCountry(values);
+    });
+  };
 
   return (
     <Flex>
@@ -106,25 +93,56 @@ function Contents() {
               body="Deaths"
               color="red.400"
             />
-            <CardContent heading="Country" body="USA" color="yellow.400" />
-            <CardContent
-              heading={country.data.confirmed.value}
-              body="Confirmed"
-              color="teal.400"
-            />
-            <CardContent
-              heading={country.data.recovered.value}
-              body="Recovered"
-              color="green.400"
-            />
-            <CardContent
-              heading={country.data.deaths.value}
-              body="Deaths"
-              color="red.400"
-            />
           </Grid>
-          {/* <NewsContent /> */}
-          {/* <Box>{JSON.stringify(country, null, 2)}</Box> */}
+          <Box maxWidth="300px" alignSelf="center" pt="20px">
+            <Text
+              color="gray.900"
+              fontSize="25px"
+              fontFamily="font.century"
+              textAlign="center"
+            >
+              Select Country
+            </Text>
+            <Select onChange={handlerChangeCountry}>
+              {countries.map(language => (
+                <option key={language.name} value={language.name}>
+                  {language.name}
+                </option>
+              ))}
+            </Select>
+          </Box>
+          <Box>
+            {country && (
+              <Grid
+                templateColumns={{
+                  lg: "repeat(3, 1fr)",
+                  md: "repeat(4, 1fr)",
+                  sm: "repeat(1, 1fr)"
+                }}
+                gap={5}
+                maxWidth="86em"
+                ml="auto"
+                mr="auto"
+                mt="25px"
+              >
+                <CardContent
+                  heading={country.confirmed.value}
+                  body="Confirmed"
+                  color="teal.400"
+                />
+                <CardContent
+                  heading={country.recovered.value}
+                  body="Recovered"
+                  color="green.400"
+                />
+                <CardContent
+                  heading={country.deaths.value}
+                  body="Deaths"
+                  color="red.400"
+                />
+              </Grid>
+            )}
+          </Box>
         </Stack>
       </Box>
     </Flex>
