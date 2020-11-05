@@ -40,7 +40,7 @@ function Contents() {
   };
 
   return (
-    <Box minHeight="720px" width="full" bg="color.content" padding="10px">
+    <Box maxHeight="720px" width="full" bg="color.content" padding="10px">
       <Stack>
         <Text
           fontSize="40px"
