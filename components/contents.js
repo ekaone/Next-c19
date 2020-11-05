@@ -1,25 +1,55 @@
 import React, { useState, useEffect } from "react";
-import { Flex, Box, Text, Stack, Grid } from "@chakra-ui/core";
+import { Flex, Box, Text, Stack, Grid, useTheme } from "@chakra-ui/core";
+import useSWR from "swr";
+
 // components
 import Layout from "./layout";
 import CardContent from "./card.content";
 import status from "../shared/status";
 import fetcher from "../utils/fetcher";
+import NewsContent from "./news.content";
+import getCountry from "../utils/getCountry";
 
-// const END_POINT = "https://covid19.mathdro.id/api/countries/indonesia";
 const END_POINT =
   "https://covid19.mathdro.id/api/countries/indonesia/confirmed";
 
+function Country() {
+  const { data, error } = useSWR(
+    `https://covid19.mathdro.id/api/countries/usa/`,
+    fetcher
+  );
+  if (error) return "failed to load";
+  if (!data) return "loading...";
+  // render data
+  return { data };
+}
+
 function Contents() {
-  const [data, setData] = useState([]);
+  const [status, setStatus] = useState([]);
   const [timeUpdate, setTimeUpdate] = useState();
+  const [country, setCountry] = useState({});
 
   useEffect(() => {
+    const abortController = new AbortController();
+
     fetcher(END_POINT).then(values => {
-      setData(values[0]);
+      setStatus(values[0]);
       setTimeUpdate(new Date(values[0].lastUpdate).toDateString());
-      console.log(values);
     });
+
+    return () => {
+      abortController.abort();
+    };
+  }, [fetcher]);
+
+  let c = Country();
+  useEffect(() => {
+    const abortController = new AbortController();
+    setCountry(c);
+
+    return () => {
+      abortController.abort();
+    };
   }, [fetcher]);
 
   return (
@@ -57,22 +87,44 @@ function Contents() {
             mt="25px"
           >
             <CardContent
-              heading={data.active}
+              heading={status.active}
               body="Active"
               color="yellow.400"
             />
             <CardContent
-              heading={data.confirmed}
+              heading={status.confirmed}
               body="Confirmed"
               color="teal.400"
             />
             <CardContent
-              heading={data.recovered}
+              heading={status.recovered}
               body="Recovered"
               color="green.400"
             />
-            <CardContent heading={data.deaths} body="Deaths" color="red.400" />
+            <CardContent
+              heading={status.deaths}
+              body="Deaths"
+              color="red.400"
+            />
+            <CardContent heading="Country" body="USA" color="yellow.400" />
+            <CardContent
+              heading={country.data.confirmed.value}
+              body="Confirmed"
+              color="teal.400"
+            />
+            <CardContent
+              heading={country.data.recovered.value}
+              body="Recovered"
+              color="green.400"
+            />
+            <CardContent
+              heading={country.data.deaths.value}
+              body="Deaths"
+              color="red.400"
+            />
           </Grid>
+          {/* <NewsContent /> */}
+          {/* <Box>{JSON.stringify(country, null, 2)}</Box> */}
         </Stack>
       </Box>
     </Flex>
