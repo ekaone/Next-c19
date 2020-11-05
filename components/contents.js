@@ -40,112 +40,106 @@ function Contents() {
   };
 
   return (
-    <Flex>
-      <Box minHeight="620px" width="full" bg="color.content" padding="10px">
-        <Stack>
+    <Box minHeight="720px" width="full" bg="color.content" padding="10px">
+      <Stack>
+        <Text
+          fontSize="40px"
+          color="gray.900"
+          fontWeight="700"
+          fontFamily="font.century"
+          textAlign="center"
+          marginTop="25px"
+        >
+          Cases in Indonesia
+        </Text>
+        <Box lineHeight="25px">
+          <Text color="gray.900" fontSize="25px" fontFamily="font.century">
+            Last updated{" "}
+          </Text>
+          <Text fontSize="20px" fontFamily="font.courier">
+            {timeUpdate}
+          </Text>
+        </Box>
+        <Grid
+          templateColumns={{
+            lg: "repeat(4, 1fr)",
+            md: "repeat(3, 1fr)",
+            sm: "repeat(2, 1fr)"
+          }}
+          gap={5}
+          maxWidth="86em"
+          ml="auto"
+          mr="auto"
+          mt="25px"
+        >
+          <CardContent
+            heading={status.active}
+            body="Active"
+            color="yellow.400"
+          />
+          <CardContent
+            heading={status.confirmed}
+            body="Confirmed"
+            color="teal.400"
+          />
+          <CardContent
+            heading={status.recovered}
+            body="Recovered"
+            color="green.400"
+          />
+          <CardContent heading={status.deaths} body="Deaths" color="red.400" />
+        </Grid>
+        <Box maxWidth="300px" alignSelf="center" pt="20px">
           <Text
-            fontSize="40px"
             color="gray.900"
-            fontWeight="700"
+            fontSize="25px"
             fontFamily="font.century"
             textAlign="center"
-            marginTop="25px"
           >
-            Cases in Indonesia
+            Select Country
           </Text>
-          <Box lineHeight="25px">
-            <Text color="gray.900" fontSize="25px" fontFamily="font.century">
-              Last updated{" "}
-            </Text>
-            <Text fontSize="20px" fontFamily="font.courier">
-              {timeUpdate}
-            </Text>
-          </Box>
-          <Grid
-            templateColumns={{
-              lg: "repeat(4, 1fr)",
-              md: "repeat(3, 1fr)",
-              sm: "repeat(2, 1fr)"
-            }}
-            gap={5}
-            maxWidth="86em"
-            ml="auto"
-            mr="auto"
-            mt="25px"
-          >
-            <CardContent
-              heading={status.active}
-              body="Active"
-              color="yellow.400"
-            />
-            <CardContent
-              heading={status.confirmed}
-              body="Confirmed"
-              color="teal.400"
-            />
-            <CardContent
-              heading={status.recovered}
-              body="Recovered"
-              color="green.400"
-            />
-            <CardContent
-              heading={status.deaths}
-              body="Deaths"
-              color="red.400"
-            />
-          </Grid>
-          <Box maxWidth="300px" alignSelf="center" pt="20px">
-            <Text
-              color="gray.900"
-              fontSize="25px"
-              fontFamily="font.century"
-              textAlign="center"
+          <Select onChange={handlerChangeCountry}>
+            {countries.map(language => (
+              <option key={language.name} value={language.name}>
+                {language.name}
+              </option>
+            ))}
+          </Select>
+        </Box>
+        <Box>
+          {country && (
+            <Grid
+              templateColumns={{
+                lg: "repeat(3, 1fr)",
+                md: "repeat(2, 1fr)",
+                sm: "repeat(1, 1fr)"
+              }}
+              gap={5}
+              maxWidth="86em"
+              ml="auto"
+              mr="auto"
+              mt="25px"
             >
-              Select Country
-            </Text>
-            <Select onChange={handlerChangeCountry}>
-              {countries.map(language => (
-                <option key={language.name} value={language.name}>
-                  {language.name}
-                </option>
-              ))}
-            </Select>
-          </Box>
-          <Box>
-            {country && (
-              <Grid
-                templateColumns={{
-                  lg: "repeat(3, 1fr)",
-                  md: "repeat(2, 1fr)",
-                  sm: "repeat(1, 1fr)"
-                }}
-                gap={5}
-                maxWidth="86em"
-                ml="auto"
-                mr="auto"
-                mt="25px"
-              >
-                <CardContent
-                  heading={country.confirmed.value}
-                  body="Confirmed"
-                  color="teal.400"
-                />
-                <CardContent
-                  heading={country.recovered.value}
-                  body="Recovered"
-                  color="green.400"
-                />
-                <CardContent
-                  heading={country.deaths.value}
-                  body="Deaths"
-                  color="red.400"
-                />
-              </Grid>
-            )}
-          </Box>
-        </Stack>
-      </Box>
-    </Flex>
+              <CardContent
+                heading={country.confirmed.value}
+                body="Confirmed"
+                color="teal.400"
+              />
+              <CardContent
+                heading={country.recovered.value}
+                body="Recovered"
+                color="green.400"
+              />
+              <CardContent
+                heading={country.deaths.value}
+                body="Deaths"
+                color="red.400"
+              />
+            </Grid>
+          )}
+        </Box>
+      </Stack>
+    </Box>
   );
 }
 
