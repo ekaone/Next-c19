@@ -18,6 +18,8 @@ A `data-driven` approach enables companies to examine and organise their data wi
 
 > 🚩 Hint: Please open with your desktop browser, it's not design for mobile responsive
 
+[Demo](https://next-c19.ekaone.vercel.app/)
+
 ## Author
 
 ✔ Eka Prasetia 🤵
