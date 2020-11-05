@@ -7,10 +7,11 @@ function CardContent(props) {
   return (
     <Box
       borderWidth="1px"
-      borderRadius="5px"
+      borderRadius="10px"
       boxShadow="10px"
       bg="gray.900"
       padding="10px"
+      borderColor="yellow.500"
     >
       <Stack>
         <Text textAlign="center" fontSize="50px" color={color}>

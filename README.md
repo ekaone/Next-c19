@@ -40,7 +40,7 @@ A `data-driven` approach enables companies to examine and organise their data wi
 
 ✔ Community
 
-I am author for two communities in Indonesia
+I am author for three communities in Indonesia
 
 - GatsbyJS Indonesia [Gatsby-ID](https://gatsbyjs.id)
 - RedwoodJS Indonesia [Redwood-ID](https://redwoodjs.id)

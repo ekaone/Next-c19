@@ -9,7 +9,8 @@ export const customTheme = {
       comic: "Comic Sans MS",
       century: "Century Gothic",
       futara: "Futara",
-      trebuchet: "Trebuchet MS"
+      trebuchet: "Trebuchet MS",
+      courier: "Courier, monospace"
     },
     heading: "Menlo, monospace"
   },
