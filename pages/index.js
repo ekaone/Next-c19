@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Box } from "@chakra-ui/core";
 // components
 import Hero from "../components/hero";
+import Contents from "../components/contents";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
 
       <Box>
         <Hero />
+        <Contents />
       </Box>
     </>
   );

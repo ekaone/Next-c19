@@ -12,5 +12,11 @@ export const customTheme = {
       trebuchet: "Trebuchet MS"
     },
     heading: "Menlo, monospace"
+  },
+  colors: {
+    ...theme.colors,
+    color: {
+      content: "#f2f754"
+    }
   }
 };

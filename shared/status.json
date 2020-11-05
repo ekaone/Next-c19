@@ -1,0 +1,6 @@
+[
+  { "id": 1, "number": 478782, "status": "Confirmed", "color": "teal.400" },
+  { "id": 2, "number": 556655, "status": "Recovery", "color": "yellow.400" },
+  { "id": 3, "number": 398934, "status": "Healed", "color": "green.400" },
+  { "id": 4, "number": 15878, "status": "Dead", "color": "red.400" }
+]
